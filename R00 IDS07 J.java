@@ -1,8 +1,9 @@
+
 class DirList {
   public static void main(String[] args) throws Exception {
     String dir = System.getProperty("dir");
     Runtime rt = Runtime.getRuntime();
-    Process proc = rt.exec("cmd.exe /C dir " + dir);
+    Process proc = rt.exec(new String[] {"sh", "-c", "ls " + dir});
     int result = proc.waitFor();
     if (result != 0) {
       System.out.println("process error: " + result);
