@@ -1,6 +1,7 @@
 private ArrayList<String> names;
  
 void process(int index) {
-  assert names.remove(null); // Side effect
+  boolean nullsRemoved = names.remove(null);
+  assert nullsRemoved; // No side effect
   // ...
 }
